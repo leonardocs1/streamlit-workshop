@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from plotly import graph_objs as go
 
-# Carrega variáveis de ambiente do .env (funciona apenas localmente)
-load_dotenv()
+from dotenv import load_dotenv
+
+if os.path.exists(".env"):
+    load_dotenv()
 
 # Função para conectar ao banco
 def connect_to_db():
